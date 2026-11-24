@@ -1,0 +1,534 @@
+/* =========================================
+   Wallbloom - style.css
+   CSE326 Project
+   ========================================= */
+
+/* ---------- Basic reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: #1f2d3d;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ---------- Header ---------- */
+header {
+    background-color: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f766e;
+}
+
+.logo span {
+    color: #e07a5f;
+}
+
+nav a {
+    color: #333333;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #0f766e;
+}
+
+.nav-button {
+    background-color: #0f766e;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+.nav-button:hover {
+    background-color: #0b5c56;
+    color: #ffffff;
+}
+
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    background-color: #0f766e;
+    color: #ffffff;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0b5c56;
+    transform: translateY(-3px);
+}
+
+.btn-orange {
+    background-color: #e07a5f;
+}
+
+.btn-orange:hover {
+    background-color: #c8603f;
+}
+
+.full-width {
+    width: 100%;
+    margin-right: 0;
+}
+
+
+/* ---------- Hero section ---------- */
+.hero {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2)),
+        url("https://images.unsplash.com/photo-1615529182904-14819c35db37?w=1600&q=80");
+    background-color: #1f2d3d;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.hero-text {
+    max-width: 600px;
+    color: #ffffff;
+}
+
+.hero-text h1 {
+    color: #ffffff;
+    font-size: 46px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+    color: #f4c095;
+}
+
+.hero-text p {
+    font-size: 18px;
+}
+
+.tagline {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+
+/* ---------- Features strip ---------- */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 50px;
+    background-color: #0f766e;
+}
+
+.feature-box {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 220px;
+}
+
+.feature-box h3 {
+    color: #0f766e;
+    font-size: 24px;
+}
+
+
+/* ---------- Common section styles ---------- */
+.section {
+    padding: 70px 50px;
+}
+
+.light-bg {
+    background-color: #f6f1ea;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 34px;
+}
+
+.section-text {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 40px;
+}
+
+.two-columns {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.two-columns > div {
+    flex: 1;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ---------- Form elements ---------- */
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dddddd;
+    border-radius: 8px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0f766e;
+    outline: none;
+}
+
+input[readonly] {
+    background-color: #f3f4f6;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.input-error {
+    border-color: #dc2626;
+}
+
+.note {
+    font-size: 14px;
+    color: #777777;
+    margin-top: 15px;
+}
+
+
+/* ---------- Estimator result ---------- */
+.result-card {
+    border-top: 6px solid #0f766e;
+}
+
+.result-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+td {
+    padding: 12px 5px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+td:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+.total-row td {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f766e;
+    border-bottom: none;
+}
+
+
+/* ---------- How it works ---------- */
+.steps {
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.step-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin: 0 auto 15px;
+    background-color: #e07a5f;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+
+/* ---------- Gallery ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item p {
+    padding: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* ---------- Reviews ---------- */
+.reviews {
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+}
+
+.review-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #e07a5f;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 20px;
+}
+
+.review-card h4 {
+    margin-top: 10px;
+    color: #0f766e;
+}
+
+
+/* ---------- Booking ---------- */
+#confirmBox {
+    background-color: #ecfdf5;
+    border: 2px solid #10b981;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#confirmBox h3 {
+    color: #047857;
+    margin-bottom: 10px;
+}
+
+.info-card {
+    background-color: #0f766e;
+    color: #ffffff;
+}
+
+.info-card h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.info-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.info-card li {
+    padding: 6px 0;
+}
+
+.info-card .note {
+    color: #d1fae5;
+}
+
+.info-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: #1f2d3d;
+    color: #cccccc;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer .logo {
+    color: #5eead4;
+    margin-bottom: 5px;
+}
+
+.team {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* ---------- Mobile (screens smaller than 768px) ---------- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+    }
+
+    .hero {
+        padding: 40px 20px;
+        height: auto;
+        min-height: 70vh;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .features {
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .feature-box {
+        width: 45%;
+        padding: 15px 10px;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+
+    .two-columns,
+    .steps,
+    .reviews {
+        flex-direction: column;
+    }
+
+    /* Let each box keep its own height when stacked */
+    .two-columns > div {
+        flex: none;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card img {
+        height: 180px;
+    }
+}

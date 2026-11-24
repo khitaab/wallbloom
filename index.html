@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallbloom - Home Painting Cost Estimator</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- My CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="logo">🎨 Wall<span>bloom</span></div>
+        <nav>
+            <a href="#estimator">Estimator</a>
+            <a href="#how">How It Works</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#booking" class="nav-button">Book Now</a>
+        </nav>
+    </header>
+
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero-text">
+            <p class="tagline">Every wall, beautifully estimated.</p>
+            <h1>Know Your Painting Cost <span>Before the Contractor Does</span></h1>
+            <p>Get an honest estimate for paint, primer and labour in seconds and book a free site inspection.</p>
+            <a href="#estimator" class="btn">Get Free Estimate</a>
+            <a href="#booking" class="btn btn-orange">Book Inspection</a>
+        </div>
+    </section>
+
+
+    <!-- ========== FEATURES STRIP ========== -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>🏠 2,500+</h3>
+            <p>Homes Painted</p>
+        </div>
+        <div class="feature-box">
+            <h3>⭐ 4.8</h3>
+            <p>Average Rating</p>
+        </div>
+        <div class="feature-box">
+            <h3>💯 100%</h3>
+            <p>Transparent Pricing</p>
+        </div>
+        <div class="feature-box">
+            <h3>🔍 Free</h3>
+            <p>Site Inspection</p>
+        </div>
+    </section>
+
+
+    <!-- ========== COST ESTIMATOR ========== -->
+    <section id="estimator" class="section">
+        <h2>Painting Cost Estimator</h2>
+        <p class="section-text">Change any option and the estimate updates automatically.</p>
+
+        <div class="two-columns">
+
+            <!-- Left: inputs -->
+            <div class="card">
+                <label for="homeSize">Home Size</label>
+                <select id="homeSize" onchange="calculateCost()">
+                    <option value="600">1 BHK (600 sq ft)</option>
+                    <option value="1000" selected>2 BHK (1000 sq ft)</option>
+                    <option value="1400">3 BHK (1400 sq ft)</option>
+                    <option value="custom">Custom size</option>
+                </select>
+
+                <!-- Only shown when "Custom size" is selected -->
+                <div id="customBox" class="hidden">
+                    <label for="customArea">Carpet area (sq ft)</label>
+                    <input type="number" id="customArea" placeholder="e.g. 1200" oninput="calculateCost()">
+                    <p class="error" id="areaError"></p>
+                </div>
+
+                <label for="paintType">Painting Type</label>
+                <select id="paintType" onchange="calculateCost()">
+                    <option value="interior">Interior</option>
+                    <option value="exterior">Exterior</option>
+                </select>
+
+                <label for="paintScope">Painting Scope</label>
+                <select id="paintScope" onchange="calculateCost()">
+                    <option value="fresh">Fresh Painting (with primer)</option>
+                    <option value="repaint">Repaint / Touch-up (no primer)</option>
+                </select>
+
+                <label for="paintQuality">Paint Quality</label>
+                <select id="paintQuality" onchange="calculateCost()">
+                    <option value="12">Economy Distemper - ₹12 / sq ft</option>
+                    <option value="22" selected>Premium Emulsion - ₹22 / sq ft</option>
+                    <option value="35">Luxury Silk - ₹35 / sq ft</option>
+                </select>
+            </div>
+
+            <!-- Right: result -->
+            <div class="card result-card">
+                <h3>Your Estimate</h3>
+                <p>Paintable wall area: <b id="wallArea">-</b></p>
+
+                <table>
+                    <tr>
+                        <td>Paint Material</td>
+                        <td id="paintCost">-</td>
+                    </tr>
+                    <tr>
+                        <td>Primer</td>
+                        <td id="primerCost">-</td>
+                    </tr>
+                    <tr>
+                        <td>Labour</td>
+                        <td id="labourCost">-</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total Cost</td>
+                        <td id="totalCost">-</td>
+                    </tr>
+                </table>
+
+                <p class="note">This is an approximate estimate. The final price is confirmed after the free site inspection.</p>
+                <a href="#booking" class="btn">Book Inspection</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section id="how" class="section light-bg">
+        <h2>How It Works</h2>
+        <p class="section-text">Three simple steps to a freshly painted home.</p>
+
+        <div class="steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Get Your Estimate</h3>
+                <p>Choose your home size, painting type and paint quality to see the cost instantly.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Book an Inspection</h3>
+                <p>Pick a date and time. Our expert visits your home to measure the walls.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Get Painting</h3>
+                <p>Approve the final price and our trained painters get to work.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== GALLERY ========== -->
+    <section id="gallery" class="section">
+        <h2>Inspiration Gallery</h2>
+        <p class="section-text">Some colour ideas from real homes.</p>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=80" alt="Living room with a sage green wall">
+                <p>Calm Sage Living Room</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80" alt="House with terracotta and white walls">
+                <p>Warm Terracotta Exterior</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=600&q=80" alt="Living room with a navy blue wall">
+                <p>Royal Navy Feature Wall</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=600&q=80" alt="Bedroom with grey green walls and plants">
+                <p>Botanical Bedroom</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Grey house with a white porch">
+                <p>Classic Grey Exterior</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=600&q=80" alt="Entryway with a grey wall and round mirror">
+                <p>Charcoal Slate Entryway</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== REVIEWS ========== -->
+    <section class="section light-bg">
+        <h2>What Our Customers Say</h2>
+
+        <div class="reviews">
+            <div class="review-card">
+                <p class="stars">★★★★★</p>
+                <p>"The estimate was very close to the final price. Everything was clearly explained."</p>
+                <h4>- Ananya K., Pune</h4>
+            </div>
+            <div class="review-card">
+                <p class="stars">★★★★★</p>
+                <p>"Booking the inspection took two minutes and the team arrived right on time. Loved it!"</p>
+                <h4>- Rohan M., Ahmedabad</h4>
+            </div>
+            <div class="review-card">
+                <p class="stars">★★★★☆</p>
+                <p>"No hidden charges and the painters cleaned up every day. Great service."</p>
+                <h4>- Sana F., Bengaluru</h4>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== BOOKING FORM ========== -->
+    <section id="booking" class="section">
+        <h2>Book a Free Site Inspection</h2>
+        <p class="section-text">Fill in your details and we will confirm your visit.</p>
+
+        <div class="two-columns">
+
+            <!-- Left: the form -->
+            <div class="card">
+                <form id="bookingForm" onsubmit="return bookInspection()">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="e.g. Priya Sharma">
+                    <p class="error" id="nameError"></p>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" placeholder="10 digit mobile number" maxlength="10">
+                    <p class="error" id="phoneError"></p>
+
+                    <label for="address">Address</label>
+                    <textarea id="address" rows="3" placeholder="House no., street, city"></textarea>
+                    <p class="error" id="addressError"></p>
+
+                    <label for="visitDate">Preferred Date</label>
+                    <input type="date" id="visitDate">
+                    <p class="error" id="dateError"></p>
+
+                    <label for="timeSlot">Time Slot</label>
+                    <select id="timeSlot">
+                        <option value="">-- Select a time slot --</option>
+                        <option value="9 AM - 12 PM">9 AM - 12 PM</option>
+                        <option value="12 PM - 3 PM">12 PM - 3 PM</option>
+                        <option value="3 PM - 6 PM">3 PM - 6 PM</option>
+                    </select>
+                    <p class="error" id="slotError"></p>
+
+                    <label for="estimateField">Your Estimate</label>
+                    <input type="text" id="estimateField" readonly>
+
+                    <button type="submit" class="btn full-width">Confirm Booking</button>
+                </form>
+
+                <!-- Hidden until the booking is successful -->
+                <div id="confirmBox" class="hidden">
+                    <h3>✅ Booking Confirmed!</h3>
+                    <p>Booking ID: <b id="confirmId"></b></p>
+                    <p>Name: <b id="confirmName"></b></p>
+                    <p>Phone: <b id="confirmPhone"></b></p>
+                    <p>Date: <b id="confirmDate"></b></p>
+                    <p>Time: <b id="confirmSlot"></b></p>
+                    <p>Estimate: <b id="confirmEstimate"></b></p>
+                    <button class="btn" onclick="bookAgain()">Book Another</button>
+                </div>
+            </div>
+
+            <!-- Right: information -->
+            <div class="card info-card">
+                <h3>What happens during the inspection?</h3>
+                <ul>
+                    <li>✔ We measure the exact wall area</li>
+                    <li>✔ We check for cracks and dampness</li>
+                    <li>✔ We show you real colour samples</li>
+                    <li>✔ You get a fixed final price</li>
+                </ul>
+
+                <h3>Working Hours</h3>
+                <p>Monday to Saturday: 9 AM - 6 PM</p>
+                <p>Sunday: Closed</p>
+                <p class="note">The inspection is completely free and takes about 30-45 minutes.</p>
+
+                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" alt="Painter painting a wall with a roller">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="logo">🎨 Wall<span>bloom</span></div>
+        <p>Every wall, beautifully estimated.</p>
+        <p class="team">CSE326 Web Development Project<br>
+            Ritik Sharma (Roll No. 32) | Tejjas Chaudhary (Roll No. 17) | Khitaab Chhabra (Roll No. 30)</p>
+        <p class="copyright">© 2026 Wallbloom. All prices are approximate.</p>
+    </footer>
+
+
+    <!-- My JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
